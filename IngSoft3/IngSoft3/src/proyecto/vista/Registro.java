@@ -2,19 +2,16 @@ package proyecto.vista;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import proyecto.Modelo.RegistroModelo;
 import proyecto.Modelo.Usuario;
 
 public class Registro extends javax.swing.JFrame {
 
-    private Login loginWindow;
+    private RegistroModelo registroModelo;
 
     public Registro() {
         initComponents();
-    }
-
-    public Registro(Login loginWindow) {
-        this.loginWindow = loginWindow;
-        initComponents();
+        registroModelo = new RegistroModelo();
     }
 
     @SuppressWarnings("unchecked")
@@ -204,10 +201,11 @@ public class Registro extends javax.swing.JFrame {
             System.out.println("Usuario registrado con éxito");
             if (this != null) {
                 this.dispose();
-            }
+                Login vistaLogin = new Login();
+                vistaLogin.setVisible(true);
 
-            if (loginWindow != null) {
-                loginWindow.setVisible(true);
+                this.setVisible(false);
+
             }
 
         } catch (Exception e) {
