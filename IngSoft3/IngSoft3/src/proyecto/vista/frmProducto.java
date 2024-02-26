@@ -67,7 +67,7 @@ public class frmProducto extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tabla);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 54, 703, 420));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 44, 703, 430));
 
         txtTelefono.setText("0.00");
         txtTelefono.addActionListener(new java.awt.event.ActionListener() {
