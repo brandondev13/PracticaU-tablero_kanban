@@ -30,7 +30,7 @@ public class frmCliente extends javax.swing.JFrame {
         rSLabelLineWrap1 = new rojeru_san.rslabel.RSLabelLineWrap();
         rSScaleLabel1 = new rsscalelabel.RSScaleLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        rSTableMetro11 = new rojerusan.RSTableMetro1();
+        tabla = new rojerusan.RSTableMetro1();
         jToolBar1 = new javax.swing.JToolBar();
         btnNuevo = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
@@ -41,11 +41,22 @@ public class frmCliente extends javax.swing.JFrame {
         txtConsulta = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
+        txtCodigo = new necesario.TextField();
+        jLabel2 = new javax.swing.JLabel();
+        txtTelefon = new necesario.TextField();
+        jLabel3 = new javax.swing.JLabel();
+        txtNombre = new necesario.TextField();
+        jLabel4 = new javax.swing.JLabel();
+        txtDireccion = new necesario.TextField();
+        jLabel5 = new javax.swing.JLabel();
+        txtEmail = new necesario.TextField();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Clientes");
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        rSTableMetro11.setModel(new javax.swing.table.DefaultTableModel(
+        tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -56,7 +67,9 @@ public class frmCliente extends javax.swing.JFrame {
                 "Código", "Nombre"
             }
         ));
-        jScrollPane1.setViewportView(rSTableMetro11);
+        jScrollPane1.setViewportView(tabla);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 700, 630));
 
         jToolBar1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jToolBar1.setRollover(true);
@@ -144,28 +157,39 @@ public class frmCliente extends javax.swing.JFrame {
         });
         jToolBar1.add(btnSalir);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 703, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1))
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        getContentPane().add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 703, 31));
+        getContentPane().add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 170, 27));
+
+        jLabel2.setText("Código");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
+
+        txtTelefon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTelefonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtTelefon, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 170, 27));
+
+        jLabel3.setText("Nombre");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, -1, -1));
+        getContentPane().add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, 430, 27));
+
+        jLabel4.setText("Dirección");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
+        getContentPane().add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 620, 27));
+
+        jLabel5.setText("Teléfono");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
+
+        txtEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEmailActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 210, 430, 27));
+
+        jLabel6.setText("Email");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -204,6 +228,14 @@ public class frmCliente extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.setVisible(false);
     }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void txtTelefonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTelefonActionPerformed
+
+    private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmailActionPerformed
 
     /**
      * @param args the command line arguments
@@ -246,11 +278,21 @@ public class frmCliente extends javax.swing.JFrame {
     private javax.swing.JButton btnSalir;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JToolBar jToolBar1;
     private rojeru_san.rslabel.RSLabelLineWrap rSLabelLineWrap1;
     private rsscalelabel.RSScaleLabel rSScaleLabel1;
-    private rojerusan.RSTableMetro1 rSTableMetro11;
+    private rojerusan.RSTableMetro1 tabla;
+    private necesario.TextField txtCodigo;
     private javax.swing.JTextField txtConsulta;
+    private necesario.TextField txtDireccion;
+    private necesario.TextField txtEmail;
+    private necesario.TextField txtNombre;
+    private necesario.TextField txtTelefon;
     // End of variables declaration//GEN-END:variables
 }

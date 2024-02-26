@@ -30,7 +30,15 @@ public class frmProducto extends javax.swing.JFrame {
         rSLabelLineWrap1 = new rojeru_san.rslabel.RSLabelLineWrap();
         rSScaleLabel1 = new rsscalelabel.RSScaleLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        rSTableMetro11 = new rojerusan.RSTableMetro1();
+        tabla = new rojerusan.RSTableMetro1();
+        txtTelefono = new necesario.TextField();
+        jLabel3 = new javax.swing.JLabel();
+        txtDescripcion = new necesario.TextField();
+        jLabel4 = new javax.swing.JLabel();
+        txtDireccion = new necesario.TextField();
+        jLabel5 = new javax.swing.JLabel();
+        txtCodigo = new necesario.TextField();
+        jLabel2 = new javax.swing.JLabel();
         jToolBar1 = new javax.swing.JToolBar();
         btnNuevo = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
@@ -44,8 +52,9 @@ public class frmProducto extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Productos");
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        rSTableMetro11.setModel(new javax.swing.table.DefaultTableModel(
+        tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -56,12 +65,39 @@ public class frmProducto extends javax.swing.JFrame {
                 "Código", "Decsripción", "Precio Unitario", "IVA"
             }
         ));
-        jScrollPane1.setViewportView(rSTableMetro11);
+        jScrollPane1.setViewportView(tabla);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 54, 703, 420));
+
+        txtTelefono.setText("0.00");
+        txtTelefono.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTelefonoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, 140, 27));
+
+        jLabel3.setText("Descripción");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, -1, -1));
+        getContentPane().add(txtDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, 440, 27));
+
+        jLabel4.setText("Precio de venta");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
+
+        txtDireccion.setText("0.00");
+        getContentPane().add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 150, 27));
+
+        jLabel5.setText("Impuesto");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, -1, -1));
+        getContentPane().add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 150, 27));
+
+        jLabel2.setText("Código");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
 
         jToolBar1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jToolBar1.setRollover(true);
 
-        btnNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/image/16/new (3).gif"))); // NOI18N
+        btnNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto/Imagenes/barra/new (3).gif"))); // NOI18N
         btnNuevo.setFocusable(false);
         btnNuevo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnNuevo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -72,7 +108,7 @@ public class frmProducto extends javax.swing.JFrame {
         });
         jToolBar1.add(btnNuevo);
 
-        btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/image/16/edit.gif"))); // NOI18N
+        btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto/Imagenes/barra/edit.gif"))); // NOI18N
         btnEditar.setFocusable(false);
         btnEditar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnEditar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -83,7 +119,7 @@ public class frmProducto extends javax.swing.JFrame {
         });
         jToolBar1.add(btnEditar);
 
-        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/image/16/delete.gif"))); // NOI18N
+        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto/Imagenes/barra/delete.gif"))); // NOI18N
         btnEliminar.setFocusable(false);
         btnEliminar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnEliminar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -94,7 +130,7 @@ public class frmProducto extends javax.swing.JFrame {
         });
         jToolBar1.add(btnEliminar);
 
-        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/image/16/save.gif"))); // NOI18N
+        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto/Imagenes/barra/guardar.gif"))); // NOI18N
         btnGuardar.setFocusable(false);
         btnGuardar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnGuardar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -105,13 +141,13 @@ public class frmProducto extends javax.swing.JFrame {
         });
         jToolBar1.add(btnGuardar);
 
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/image/16/printer.gif"))); // NOI18N
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto/Imagenes/barra/imprimir.gif"))); // NOI18N
         jButton6.setFocusable(false);
         jButton6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton6.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jButton6);
 
-        jLabel10.setText(" F2 CÓDIGO F3 NOMBRE    ");
+        jLabel10.setText(" F2 CÓDIGO F3 NOMBRE  ");
         jToolBar1.add(jLabel10);
 
         txtConsulta.setText(" Buscar");
@@ -122,7 +158,7 @@ public class frmProducto extends javax.swing.JFrame {
         });
         jToolBar1.add(txtConsulta);
 
-        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/image/16/find.gif"))); // NOI18N
+        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto/Imagenes/barra/buscar.gif"))); // NOI18N
         btnBuscar.setFocusable(false);
         btnBuscar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnBuscar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -133,7 +169,7 @@ public class frmProducto extends javax.swing.JFrame {
         });
         jToolBar1.add(btnBuscar);
 
-        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/image/16/Exit.gif"))); // NOI18N
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto/Imagenes/barra/Exit.gif"))); // NOI18N
         btnSalir.setFocusable(false);
         btnSalir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnSalir.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -144,29 +180,14 @@ public class frmProducto extends javax.swing.JFrame {
         });
         jToolBar1.add(btnSalir);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 703, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE))
-        );
+        getContentPane().add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 703, 31));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefonoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTelefonoActionPerformed
 
     private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
         // TODO add y our handling code here:
@@ -175,7 +196,7 @@ public class frmProducto extends javax.swing.JFrame {
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
         // TODO add your handling code here:
- 
+        //  accionCRUD=1; //nuevo
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
@@ -185,7 +206,7 @@ public class frmProducto extends javax.swing.JFrame {
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         //si accion crud es crea si no modifica
-   
+
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void txtConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConsultaActionPerformed
@@ -246,11 +267,19 @@ public class frmProducto extends javax.swing.JFrame {
     private javax.swing.JButton btnSalir;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JToolBar jToolBar1;
     private rojeru_san.rslabel.RSLabelLineWrap rSLabelLineWrap1;
     private rsscalelabel.RSScaleLabel rSScaleLabel1;
-    private rojerusan.RSTableMetro1 rSTableMetro11;
+    private rojerusan.RSTableMetro1 tabla;
+    private necesario.TextField txtCodigo;
     private javax.swing.JTextField txtConsulta;
+    private necesario.TextField txtDescripcion;
+    private necesario.TextField txtDireccion;
+    private necesario.TextField txtTelefono;
     // End of variables declaration//GEN-END:variables
 }

@@ -45,6 +45,11 @@ public class Inicio extends javax.swing.JFrame {
 
         registro.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         registro.setText("REGISTRATE");
+        registro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registroActionPerformed(evt);
+            }
+        });
 
         login.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         login.setText("INICIAR SESION");
@@ -99,6 +104,10 @@ public class Inicio extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void registroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_registroActionPerformed
  
     public static void main(String args[]) {
         
